@@ -43,18 +43,20 @@
 
         <!-- 3 different tab below the section title -->
         <div class="flex gap-4 mb-5">
-            <button class="bg-[#3B82F6] px-5 py-2 rounded-lg border border-[#d2d6dc]">
+            <button onclick="toggleEvent('all-jobs-btn')" class="bg-[#3B82F6] px-5 py-2 rounded-lg border border-[#d2d6dc]" id="all-jobs-btn">
                 All
             </button>
-            <button class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]">
+
+            <button onclick="toggleEvent('interview-jobs-btn')" class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="interview-jobs-btn">
                 Interview
             </button>
-            <button class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]">
+
+            <button onclick="toggleEvent('rejected-jobs-btn')" class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="rejected-jobs-btn">
                 Rejected
             </button>
         </div>
         <!-- All Card -->
-        <div class="space-y-5">
+        <div class="space-y-5" id="allCards">
             <!-- Card 1 -->
             <div class="flex justify-between bg-white p-6 rounded-lg">
                 <!-- content -->
@@ -74,9 +76,9 @@
                         <span id="salary">$140k - $180k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Building next-gen React interfaces for AI-driven analytics
@@ -85,12 +87,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300" id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300" id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -121,9 +123,9 @@
                         <span id="salary">$90k - $110k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Helping Fortune 500 companies reduce carbon footprints through data auditing.
@@ -131,12 +133,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -167,9 +169,9 @@
                         <span id="salary">$85k - $120k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Creating high-impact visual stories and brand animations for global clients.
@@ -177,12 +179,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -213,9 +215,9 @@
                         <span id="salary">£70k - £95k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Scaling high-frequency trading platforms with a focus on low latency.
@@ -223,12 +225,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -259,9 +261,9 @@
                         <span id="salary">$130k - $160k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Leading the roadmap for a patient-centric telehealth mobile application.
@@ -269,12 +271,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -305,9 +307,9 @@
                         <span id="salary">$160k - $200k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Managing multi-cloud infrastructure and automating CI/CD pipelines at scale.
@@ -315,12 +317,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -351,9 +353,9 @@
                         <span id="salary">$75k - $95k</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Streamlining warehouse efficiency and managing regional distribution teams.
@@ -361,12 +363,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
@@ -397,9 +399,9 @@
                         <span id="salary">$50/hr - $70/hr</span>
                     </div>
 
-                    <button class="bg-[#EEF4FF] px-3 py-1 rounded-lg">
+                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
                         NOT APPLIED
-                    </button>
+                    </span>
 
                     <p class="text-sm text-gray-500" id="description">
                         Conducting user interviews to improve accessibility in K-12 learning software.
@@ -407,12 +409,12 @@
 
                     <div class="flex gap-4">
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
                             INTERVIEW
                         </button>
 
                         <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
                             REJECTED
                         </button>
                     </div>
