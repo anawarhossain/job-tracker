@@ -38,395 +38,424 @@
         <!-- A title on the left side, jobs count on the right side -->
         <div class="flex justify-between mb-6">
             <p class="font-bold text-2xl">Available jobs</p>
-            <p id="total-jobs">0 <span>jobs</span></p>
+            <p id="available-total-jobs">0 <span>jobs</span></p>
         </div>
 
         <!-- 3 different tab below the section title -->
         <div class="flex gap-4 mb-5">
-            <button onclick="toggleEvent('all-jobs-btn')" class="bg-[#3B82F6] px-5 py-2 rounded-lg border border-[#d2d6dc]" id="all-jobs-btn">
+            <button onclick="toggleEvent('all-jobs-btn')"
+                class="bg-[#3B82F6] px-5 py-2 rounded-lg border border-[#d2d6dc]" id="all-jobs-btn">
                 All
             </button>
 
-            <button onclick="toggleEvent('interview-jobs-btn')" class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="interview-jobs-btn">
+            <button onclick="toggleEvent('interview-jobs-btn')"
+                class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="interview-jobs-btn">
                 Interview
             </button>
 
-            <button onclick="toggleEvent('rejected-jobs-btn')" class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="rejected-jobs-btn">
+            <button onclick="toggleEvent('rejected-jobs-btn')"
+                class="bg-white px-5 py-2 rounded-lg border border-[#d2d6dc]" id="rejected-jobs-btn">
                 Rejected
             </button>
         </div>
+
+
+
         <!-- All Card -->
         <div class="space-y-5" id="allCards">
-            <!-- Card 1 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        Luminary Tech
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Senior Frontend Engineer
-                    </p>
 
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Remote</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Full-time</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$140k - $180k</span>
+            <div class="allCard rounded-lg space-y-5">
+                <!-- Card 1 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            Luminary Tech
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            Senior Frontend Engineer
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Remote</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Full-time</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$140k - $180k</span>
+                        </div>
+
+                        <span class="status  bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block ">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500 ">
+                            Building next-gen React interfaces for AI-driven analytics
+                            dashboards.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300 ">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300 ">
+                                REJECTED
+                            </button>
+                        </div>
                     </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Building next-gen React interfaces for AI-driven analytics
-                        dashboards.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300" id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300" id="rejected">
-                            REJECTED
-                        </button>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
                     </div>
                 </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
+
+                <!-- Card 2 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px] ">
+                            GreenPulse
+                        </h1>
+                        <p class="position text-sm text-gray-500 ">
+                            Sustainability Consultant
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Oslo, Norway</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Contract</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$90k - $110k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block ">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500 ">
+                            Helping Fortune 500 companies reduce carbon footprints through data auditing.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300 ">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300 ">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px] ">
+                            Stellar Creative
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            Motion Designer
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">New York, NY</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Full-time</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$85k - $120k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Creating high-impact visual stories and brand animations for global clients.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            Apex FinTech
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            Backend Developer (Go)
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">London, UK</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Hybrid</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">£70k - £95k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Scaling high-frequency trading platforms with a focus on low latency.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            Nova Health
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            Product Manager
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Austin, TX</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Full-time</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$130k - $160k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Leading the roadmap for a patient-centric telehealth mobile application.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            CloudScale
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            DevOps Architect
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Seattle, WA</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Full-time</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$160k - $200k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Managing multi-cloud infrastructure and automating CI/CD pipelines at scale.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            SwiftLogistics
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            Operations Manager
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Chicago, IL</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">On-site</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$75k - $95k</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Streamlining warehouse efficiency and managing regional distribution teams.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="flex justify-between bg-white p-6 rounded-lg">
+                    <!-- content -->
+                    <div class="space-y-4">
+                        <h1 class="companyName font-bold text-[20px]">
+                            BrightPath Ed
+                        </h1>
+                        <p class="position text-sm text-gray-500">
+                            UX Researcher
+                        </p>
+
+                        <div class="flex text-sm text-gray-500">
+                            <span class="location">Toronto, CA</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="type">Part-time</span>
+                            <span class="mx-2 text-gray-400">•</span>
+                            <span class="salary">$50/hr - $70/hr</span>
+                        </div>
+
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block">
+                            NOT APPLIED
+                        </span>
+
+                        <p class="description text-sm text-gray-500">
+                            Conducting user interviews to improve accessibility in K-12 learning software.
+                        </p>
+
+                        <div class="flex gap-4">
+                            <button
+                                class="interview-btn px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300">
+                                INTERVIEW
+                            </button>
+
+                            <button
+                                class="rejected-btn px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300">
+                                REJECTED
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Delete icon -->
+                    <div
+                        class="delete-btn w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
+                        <i class="fa-regular fa-trash-can"></i>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Card 2 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        GreenPulse
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Sustainability Consultant
-                    </p>
 
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Oslo, Norway</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Contract</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$90k - $110k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Helping Fortune 500 companies reduce carbon footprints through data auditing.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        Stellar Creative
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Motion Designer
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">New York, NY</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Full-time</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$85k - $120k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Creating high-impact visual stories and brand animations for global clients.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        Apex FinTech
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Backend Developer (Go)
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">London, UK</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Hybrid</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">£70k - £95k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Scaling high-frequency trading platforms with a focus on low latency.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        Nova Health
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Product Manager
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Austin, TX</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Full-time</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$130k - $160k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Leading the roadmap for a patient-centric telehealth mobile application.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        CloudScale
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        DevOps Architect
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Seattle, WA</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Full-time</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$160k - $200k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Managing multi-cloud infrastructure and automating CI/CD pipelines at scale.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        SwiftLogistics
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        Operations Manager
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Chicago, IL</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">On-site</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$75k - $95k</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Streamlining warehouse efficiency and managing regional distribution teams.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="flex justify-between bg-white p-6 rounded-lg">
-                <!-- content -->
-                <div class="space-y-4">
-                    <h1 class="font-bold text-[20px]" id="companyName">
-                        BrightPath Ed
-                    </h1>
-                    <p class="text-sm text-gray-500" id="position">
-                        UX Researcher
-                    </p>
-
-                    <div class="flex text-sm text-gray-500">
-                        <span id="location">Toronto, CA</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="type">Part-time</span>
-                        <span class="mx-2 text-gray-400">•</span>
-                        <span id="salary">$50/hr - $70/hr</span>
-                    </div>
-
-                    <span class="bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block" id="status">
-                        NOT APPLIED
-                    </span>
-
-                    <p class="text-sm text-gray-500" id="description">
-                        Conducting user interviews to improve accessibility in K-12 learning software.
-                    </p>
-
-                    <div class="flex gap-4">
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-green-300 text-green-500 hover:border-green-500 hover:text-green-300"  id="interview">
-                            INTERVIEW
-                        </button>
-
-                        <button
-                            class="px-5 py-2 font-bold rounded-lg border border-red-300 text-red-500 hover:border-red-500 hover:text-red-300"  id="rejected">
-                            REJECTED
-                        </button>
-                    </div>
-                </div>
-                <!-- Delete icon -->
-                <div
-                    class="w-8 h-8 flex justify-center items-center p-5 border-2 border-[#d2d6dc] rounded-full hover:bg-red-500">
-                    <i class="fa-regular fa-trash-can"></i>
-                </div>
-            </div>
 
         </div>
+        <br>
+        <!-- Filtaring card -->
+        <div class="space-y-5" id="filteringCards">
+            <div class="filteringCard rounded-lg space-y-5">
+                <!-- content -->
+                <div class="space-y-4 bg-white text-center p-8">
+
+                    <div><img class="inline-block" src="./jobs.png" alt=""></div>
+
+                    <div class="">
+                        <h1 class="font-bold text-[20px]">No jobs available</h1>
+                        <p class="text-sm text-gray-500">Check back soon for new job opportunities</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
     <script src="./script.js"></script>
