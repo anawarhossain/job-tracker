@@ -6,9 +6,7 @@ let currentStatus = "All";
 const totalJobsCount = document.getElementById("total-jobs");
 const totalInterviewCount = document.getElementById("total-interview");
 const totalRejectedCount = document.getElementById("total-rejected");
-const availableTotalJobs = document.getElementById("available-total-jobs")
-
-
+const availableTotalJobs = document.getElementById("available-total-jobs");
 
 // all, interviw, rejected button get
 const allJobsBtn = document.getElementById("all-jobs-btn");
@@ -18,7 +16,6 @@ const rejectedJobsbtn = document.getElementById("rejected-jobs-btn");
 // Card section get
 const totalJobsSection = document.getElementById("allCards");
 const jobsCards = document.querySelector(".allCard");
-
 
 // main section get (delegation using main tag)
 const mainContainer = document.querySelector("main");
@@ -33,7 +30,7 @@ function totalCalculate(count) {
   totalInterviewCount.innerText = interviewList.length;
   totalRejectedCount.innerText = rejectedList.length;
 
-  // currentStatus অনুযায়ী সঠিক count
+  // currentStatus count
   if (currentStatus == "interview-jobs-btn") {
     availableTotalJobs.innerText = `${interviewList.length} of ${jobsCards.children.length} jobs`;
   } else if (currentStatus == "rejected-jobs-btn") {
@@ -64,42 +61,40 @@ function toggleEvent(id) {
   selectId.classList.add("bg-[#3B82F6]");
 
   if (id == "interview-jobs-btn") {
-    
     filteringCard.classList.remove("hidden");
     jobsCards.classList.add("hidden");
-    totalCalculate()
+    totalCalculate();
     interviewCardsRendaring();
   } else if (id == "all-jobs-btn") {
-
     jobsCards.classList.remove("hidden");
     filteringCard.classList.add("hidden");
     totalCalculate(jobsCards.children.length);
-
-
   } else if (id == "rejected-jobs-btn") {
-
     filteringCard.classList.remove("hidden");
     jobsCards.classList.add("hidden");
-    totalCalculate()
+    totalCalculate();
     rejectedCardsRendaring();
   }
 }
 
 mainContainer.addEventListener("click", function (event) {
-
   // delete button condition
   if (event.target.closest(".delete-btn")) {
     const cardDelete = event.target.closest(".flex.justify-between");
     const companyName = cardDelete.querySelector(".companyName").innerText;
 
     // interviewList and rejectedList theke remove
-    interviewList = interviewList.filter((item) => item.companyName !== companyName);
-    rejectedList = rejectedList.filter((item) => item.companyName != companyName);
+    interviewList = interviewList.filter(
+      (item) => item.companyName !== companyName,
+    );
+    rejectedList = rejectedList.filter(
+      (item) => item.companyName != companyName,
+    );
 
     // card delete for dom
     cardDelete.remove();
 
-    // filtered tab re-render 
+    // filtered tab re-render
     if (currentStatus == "interview-jobs-btn") {
       interviewCardsRendaring();
     } else if (currentStatus == "rejected-jobs-btn") {
@@ -107,12 +102,7 @@ mainContainer.addEventListener("click", function (event) {
     }
 
     totalCalculate();
-
   }
-
-
-
-
 
   if (event.target.classList.contains("interview-btn")) {
     // interview clicked kra card div
@@ -130,7 +120,8 @@ mainContainer.addEventListener("click", function (event) {
 
     // status text color change
     const statusChange = parentNode.querySelector(".status");
-    // statusChange.classList.add("text-green-500");
+    statusChange.classList.remove("text-red-500"); // আগের color সরাও
+    statusChange.classList.add("text-green-500");
 
     const cardInfo = {
       companyName,
@@ -154,16 +145,13 @@ mainContainer.addEventListener("click", function (event) {
       (item) => item.companyName != cardInfo.companyName,
     );
 
-    
     // Rejected button click করলে
     if (currentStatus == "rejected-jobs-btn") {
       // ✓ rejected tab এ আছি
       rejectedCardsRendaring(); // ✓ rejected re-render করো
     }
 
-
     totalCalculate();
-
   } else if (event.target.classList.contains("rejected-btn")) {
     // interview clicked kra card div
     const parentNode = event.target.parentNode.parentNode;
@@ -179,7 +167,8 @@ mainContainer.addEventListener("click", function (event) {
 
     // status text color change
     const statusChange = parentNode.querySelector(".status");
-    // statusChange.classList.add("text-green-500");
+    statusChange.classList.remove("text-green-500"); // আগের color সরাও
+    statusChange.classList.add("text-red-500");
 
     const cardInfo = {
       companyName,
@@ -239,7 +228,7 @@ function interviewCardsRendaring() {
                             <span class="salary">${interview.salary}</span>
                         </div>
 
-                        <span class="status  bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block ">
+                        <span class="status bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block text-green-500">
                             ${interview.status}
                         </span>
 
@@ -301,7 +290,7 @@ function rejectedCardsRendaring() {
                             <span class="salary">${rejected.salary}</span>
                         </div>
 
-                        <span class="status  bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block ">
+                        <span class="status  bg-[#EEF4FF] px-3 py-1 rounded-lg inline-block text-red-500">
                             ${rejected.status}
                         </span>
 
@@ -325,7 +314,6 @@ function rejectedCardsRendaring() {
       filteringCard.appendChild(div);
     }
   } else {
-
     filteringCard.innerHTML = `
       <div class="space-y-4 bg-white text-center p-8">
         <div><img class="inline-block" src="./jobs.png" alt=""></div>
