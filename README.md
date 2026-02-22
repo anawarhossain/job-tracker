@@ -1,13 +1,13 @@
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-getElementById: It is target a unique ID and returns a single element and very fastest.
+<b>getElementById</b>: It is target a unique ID and returns a single element and very fastest.
 
-getElementsByClassName: It is target a class name and returns a live HTMLCollection and fast.
+<b>getElementsByClassName</b>: It is target a class name and returns a live HTMLCollection and fast.
 
-querySelector: It is target any CSS selector and returns the first match only.
+<b>querySelector</b>: It is target any CSS selector and returns the first match only.
 
-querySelectorAll: It is target any CSS selector and returns a static NodeList.
+<b>querySelectorAll</b>: It is target any CSS selector and returns a static NodeList.
 
 ### 2. How do you create and insert a new element into the DOM?
 
@@ -45,11 +45,13 @@ Dynamic Elements: If need add new items to the list later,  don't need to manual
 
 They do very different things:
 
-preventDefault() stops the browser's default behavior.
+<b>preventDefault()</b> stops the browser's default behavior.
 
 Example: Preventing a link from opening a URL or a "Submit" button from refreshing the page.
 
-stopPropagation() stops the event from bubbling.
+<b>stopPropagation()</b> stops the event from bubbling.
 
-Example: If you have a button inside a clickable card, you use stopPropagation() on the button so that clicking it doesn't also trigger the card's click event.
+Example: If you have a button inside a clickable card, you use 
+
+stopPropagation() on the button so that clicking it doesn't also trigger the card's click event.
 
